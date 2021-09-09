@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>系统首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" >
+</head>
+<body>
+    <!--导航栏-->
+    <!--inverted反转，默认是白色的，反转成黑色。attached是依附，不会出现圆角-->
+    <nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui red header item">信息系统</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="file alternate outline icon"></i>信息</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于</a>
+                <div class="right item m-mobile-hide">
+                    <div class="ui icon transparent input">
+                        <input type="text" placeholder="Search">
+                        <i class="search inverted link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!--中间内容-->
+    <div class="m-container m-padded-tb-big">
+        <div class="ui container middle "><!--这个semantic的容器有响应式的效果-->
+            <div class="ui stackable grid">
+                <div class="center top attached aligned basic segment">
+                    <img src="../static/images/houses.png" th:src="@{/images/houses.png}" style="height: 430px;width:1000px" class="center aligned">
+                </div>
+
+                <div class="ui bottom attached segment m-margin-top-large" >
+                    <h2 class="ui center aligned header">壮族基本信息介绍</h2>
+
+
+                    <div id="intro-container" class="ui red segment">
+                        <p>壮族（壮文：Bouxcuengh ，英文：Bourau），旧称僮（zhuàng）族，是中国人口最多的一个少数民族，民族语言为壮语，属汉藏语系壮侗语族壮傣语支。
+                            壮族源于先秦秦汉时期汉族史籍所记载的居住在岭南地区的“西瓯”、“骆越”等，在全国的31个省、自治区、直辖市中均有壮族分布，
+                            主要聚居在南方，范围东起广东省连山壮族瑶族自治县，西至云南省文山壮族苗族自治州，北达贵州省黔东南苗族侗族自治州从江县，南抵北部湾。
+                            广西壮族自治区是壮族的主要分布区。</p>
+                        <h3 class="ui center aligned header">信仰</h3>
+                        <p>
+                            壮族没有统一的宗教信仰。
+                            壮族民间信仰多神，崇拜天神、雷神、土地神、巨石神、树神、蛙神、花婆神以及祖先神灵等。魏晋以后，随着道教和佛教先后传入壮族地区，壮族宗教信仰体系在其影响下发生了变异，形成以原始的麽教为主，融道教和佛教为一体，信仰多神的“宗教”，并出现了半职业性神职人员——师公。师公有较完整的教规和组织，但无道教那样严格的修行仪轨，其职能是为民间祈福禳灾，驱鬼事神；所行法事兼具巫、道、释的特点。与此同时，汉族道教的正一道和太一道在壮族地区也有所流行，其神职人员壮语称道公，因其专事念经符咒而少解经文，故民间又称“喃嗼先生”。道公对道教的教义和教规虽有遵从，但也已经过壮族本土宗教文化的改造而具有方士性质。道公无固定寺院，多以设坛组班的形式进行临时性的法事活动，其祀奉神祗除道教所特有者外，也加进了佛教和壮族本土神。
+                            佛教由于其教义教规，如极乐世界、禁欲素食等，与壮族价值观念和生活习俗相牴牾，故对壮族社会的影响并不大。壮族地区虽有零星佛寺，但规模及住持僧尼人数均远在中原一般寺庙之下，其信徒也多是南居的汉族人。虽然如此，佛教的一些教义和思想主张，如积德行善、乐善好施等，还是得到了壮族人民的认同，甚至体现佛教生死轮回教义的“前世不修”词语，也成为一些壮族妇女自责的口头禅。
+                            19世纪中叶以后，基督教、天主教等也相继传入壮族地区，并在壮族地区的一些城镇建立基督教、天主教教堂，发展教徒，但影响主要局限于部分城镇居民。
+                        </p>
+                        <h3 class="ui center aligned header">饮食</h3>
+                        <p>
+                            壮族是最早栽培和种植水稻的民族之一，稻作文化十分发达，稻米也自然成为壮族人民的主食。稻米制作方法多种多样，有蒸、煮、炒、焖、炸等，各种米饭、米粥、米粉、米糕、糍粑、粽子、汤圆等，是壮族人民日常喜爱的食品。如果掺和其他材料，还可以制成许多更加味美营养的食品，如八宝饭、八宝粥、竹筒饭、南瓜饭、“彩色糯米饭”等。
+                            居住在干旱山区的壮族，由于不宜种植水稻，则以玉米为主食。
+                            壮族人民喜食水产，鱼蛤螺蚌，皆为珍味；山林中的菌果、蝉、蛇、禽、兽，也是壮族人民的日常佳肴。
+                            嚼槟榔是壮族的传统习俗，今广西龙州等地的壮族妇女仍有此喜好。有些地方，槟榔是招待客人的必需品。
+                        </p>
+                        <h3 class="ui center aligned header">建筑</h3>
+                        <p>
+                            壮族住房多数与当地汉族相同。广西西南和西北部分地区的壮族村寨，还保持着古老的传统住房形式“干栏”，又称“麻栏”。分上下两层，上面住人，下面关养牲畜和存放杂物。
+                            这种住房形式，是古代百越民族的住房特点，已有数千年的历史。因为它具有适应于南方山区地形、气候和预防毒蛇猛兽侵扰的优点，所以一直延用到现代。
+                            随着时代的发展，德保、靖西、巴马等地方的房屋虽然已经朝着现代居室方向发展，为砖石或钢筋混凝土构造，但一些房屋的结构还保留着干栏的基本特征。
+                            龙胜各族自治县的龙脊壮族聚居区的“干栏”式建筑，是保留至今最为完整的。
+                        </p>
+                        <h3 class="ui center aligned header">服饰</h3>
+                        <p>
+                            壮族的服装，大部分和汉族相同，但在桂西乡村中，尤其是中老年妇女，还保存着自己民族服装的特点。如广西西北部，中老年壮族妇女多穿无领、左衽、绣花滚边的衣服和滚边、宽脚的裤子，腰间束绣花围腰，下身穿褶裙和绣花鞋，喜戴银首饰；广西西南部龙州、凭祥一带的壮族妇女，至今仍穿着无领、左衽的黑色上衣，头上包成方块形状的黑帕，下身穿黑色宽脚裤子。
+                            古代壮族曾流行过文身、凿齿等习俗。唐代文学家柳宗元就曾提到柳州峒民（壮族古称之一）尽是文身人。宋代史书《太平寰宇记》也记载说今贵港市一带的妇女出嫁时要凿去一颗牙齿，古称“凿齿”。现在，这些风俗只在偏远的局部地区有零星流传。
+                        </p>
+                        <h3 class="ui center aligned header">语言文字</h3>
+                        <h4 class="ui center aligned header">语言</h4>
+                        <p>
+                            壮语属汉藏语系壮侗语族壮傣语支。有南北两个大方言，但语法结构、基本词汇大体相同。南北两大方言大致以郁江和右江为分界线，延伸到云南省文山州的广南、砚山一带。北部方言约占壮族人口的2/3，划分为8个土语区，即邕北土语、右江土语、桂边土语、柳江土语、桂北土语、红水河土语、邱北土语、连山土语；南部方言约占壮族人口的1/3，划分为5个土语区，即邕南土语、左江土语、德靖土语、砚广土语和文麻土语。
+                        </p>
+                        <h4 class="ui center aligned header">文字</h4>
+                        <p>
+                            唐宋以来，壮族民间曾流行“土俗字”，这种文字是在汉字的基础上，利用汉字的音、义组合而成。根据1989年广西少数民族古籍整理出版领导小组办公室出版的《古壮字字典》（初稿）统计，共有10700多个字，其中定为正体字的有4918个。这些字都是从上百年或数百年前出版或手抄的牒诉、券约、师公唱本、山歌本、故事传说、族谱、信件和碑文中收集下来的，说明这种方块壮字在壮族地区民间曾广泛流行过。不过，由于古壮字地区差别较大，缺乏规范，因此各地壮族之间无法形成统一的壮族文字，主要依靠汉文进行交流。1955年，党和人民政府帮助壮族人民创制了一种以拉丁字母为基础的壮文，并培训壮文骨干，出版书报，壮文在扫盲、宣传党的政策等方面，起了积极的作用。20世纪80年代，又完成了《壮文方案》的修订工作，使壮文进一步通用化，壮文也再次进入各级各类学校。
+                        </p>
+                        <h3 class="ui center aligned header">文学</h3>
+                        <p>
+                            壮族创造了许多神话、传说、民间故事、谚语等丰富多彩的民间文学。在布洛陀神话基础上创造的《布洛陀》长诗，是壮族的一部古老而宏伟的创世史诗，是史前时期壮族社会的百科全书，主要流传于红水河流域的巴马、东兰、凤山、天峨、南丹、河池、宜山、都安、马山和右江流域的百色、田阳、田东、平果等县。它以诗歌的形式，生动地叙述了天地日月的形成、人类的起源、各种牲畜和农作物的来历，以及远古人们的社会生活等，热情地赞颂了布洛陀这个被称为壮族始祖的神话人物创世的伟大业绩。透过这部史诗，可以看到史前壮族社会的基本面貌，以及壮族人民的生活和生产情况。
+                            20世纪50－60年代就有开创广西长篇小说先河的壮族作家陆地的《美丽的南宁》和刘玉峰的长篇小说《山村复仇记》，壮族诗人韦其麟的叙事长诗《百鸟衣》、壮族诗人黄青的抒情长诗《红河之歌》等。《百鸟衣》于1959年被列为中华人民共和国建国十周年优秀作品之一。进入改革开放时期后，壮族的文学创作更是欣欣向荣，陆地的长篇小说《长夜》获全国少数民族文学创作一等奖，由壮族诗人莎红与蓝鸿恩等人合作翻译整理的壮族民间长诗《布伯》，被称为中国少数民族民间文艺的瑰宝。
+                        </p>
+                        <h3 class="ui center aligned header">武术</h3>
+                        <p>
+                            武术在壮乡不仅有悠久的历史和传统，而且有独特的习俗。
+                            如明代桂西壮人，男孩长到十来岁，就要教他练武。当地土司提倡群众习武，群众也崇尚武术，每年冬闲时节，壮乡的各个村寨都延聘师傅传授武艺。
+                            这种习俗经久不衰，一直延续到解放前后。
+                        </p>
+                        <h3 class="ui center aligned header">节日</h3>
+                        <p>
+                            节日
+                            壮族的节日多与当地汉族相同，春节、元宵、春秋社日、清明、端午、中秋、重阳、除夕等传统汉族民间节日，也是壮族的岁时节日。壮族比较具有本民族特点的节日是“三月三”歌节、“牛魂节”、“中元节”等。
+                            壮族每年有数次定期的民歌集会，其中以“三月三”歌节最为隆重。壮族一向以能歌著称，早在汉代刘向的《说苑·善说篇》中，就有关于先秦时期壮族先民所唱的《越人歌》的记载。
+                        </p>
+                        <h3 class="ui center aligned header">婚姻</h3>
+                        <p>
+                            壮族多一夫一妻制家庭。过去，“女娶男嫁，夫从妻居”曾经较为盛行，后来过渡到“从夫居”的父系家庭为主。
+                            直到近、现代，壮族农村地区仍普遍存在婚后“不落夫家”的习俗，新娘出嫁那一天，由十来个同辈姐妹陪同到新郎家，有的地方当天婚礼过后即回娘家，有的地方新娘与同辈姐妹一起在新房中歌唱达旦度过新婚之夜，次日一起回娘家。以后逢农忙或节日才到夫家劳动几天。一般要到二、三年后或怀孕后才长住夫家。
+                            这种文化现象被认为是壮族婚姻制度从“从妻居”到“从夫居”转变进程的一种过渡形态。
+                        </p>
+                        <h3 class="ui center aligned header">丧葬</h3>
+                        <p>
+                            壮族传统的丧葬习俗，主要有两大葬法，即土葬和火葬。
+                            清代中叶以后，土葬成为主要葬法。壮族的土葬，以“二次葬”为主要葬式。二次葬，也称捡骨葬、拾骨葬，壮族称之为“金罈葬”、“金钟葬”等。其葬法是：亲属死后，以薄棺就近埋葬，起“长墓”；待三五年筋肉腐朽后，再掘坟开棺捡其骨骸装进陶制的“金罈”中，然后择定风水宝地埋葬，起“圆墓”。前述壮族的火葬，也是用“金罈”装储骨灰，然后择地而葬，也属于二次葬式。
+                            近代以来，有个别富贵之人，为显示自己的身份，一次葬非常隆重，墓地也建得异常堂皇，不再做二次葬，民间称之为“大葬”。不过，在一般民众观念中，对此种葬式并不看重，也不认可。
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--底部元素-->
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt="" class="ui rounded image" style="width:110px">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事</a>
+                        <a href="#" class="item">用户故事</a>
+                        <a href="#" class="item">用户故事</a>
+
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui center aligned inverted header m-text-thin m-text-spaced">联系我们</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email:2762845118@QQ.com</a>
+                        <a href="#" class="item">QQ:2762845118</a>
+
+
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui center aligned inverted header m-text-thin m-text-spaced">信息系统</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        本系统是关于壮族习俗和文化活动的信息系统
+                    </p>
+                </div>
+            </div>
+            <div class="ui inverted section divider">
+            </div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright@2021 tfx Designed By tfx</p>
+        </div>
+    </footer>
+
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+        <script color="0,0,0" opacity="0.5" count="99" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
+    <!--/*/</th:block>/*/-->
+
+    <script>
+        $('.menu.toggle').click(function (){
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+    </script>
+</body>
+</html>

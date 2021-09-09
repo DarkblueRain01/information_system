@@ -1,0 +1,31 @@
+server:
+  # 指定Tomcat端口
+  port: 8080
+spring:
+  application:
+    # 给这个服务取名叫做：microservice-provider-user
+    name: microservice-provider-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/info_system?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useAffectedRows=true&zeroDateTimeBehavior=convertToNull&useOldAliasMetadataBehavior=true
+    username: root
+    password: 123456
+
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+
+  logging:
+    level:
+      root: info
+      com.tfx: debug
+    file: log
+  web:
+    resources:
+      static-locations: classpath:/static/, classpath:/templates/
+

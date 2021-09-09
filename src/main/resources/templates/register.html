@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>信息系统注册</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+<br>
+<br>
+<br>
+
+    <div class="m-container-small m-padded-tb-massive" style="max-width:30em !important;">
+        <div class="ui container">
+            <div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <h2 class="ui red image header">
+                        <div class="content">
+                            用户注册
+                    </div>
+                    </h2>
+                    <form  class="ui large form" method="post" action="#" th:action="@{/Reception/register}">
+                        <div class="ui stacked segment">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="username" placeholder="用户名">
+                                </div>
+
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon negative input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="密码">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="users icon"></i>
+                                    <input type="text" name="nickname" placeholder="昵称">
+                                </div>
+
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="envelope icon"></i>
+                                    <input type="email" name="email" placeholder="邮箱">
+                                </div>
+                            </div>
+
+                            <button class="ui fluid large red submit button">注册</button>
+
+                        </div>
+
+
+                        <div class="ui mini error message"></div>
+                        <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}">
+                            注册失败
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script color="0,0,0" opacity="0.5" count="99" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
+<!--/*/</th:block>/*/-->
+
+<script>
+
+    $('.ui.form').form({
+        fields:{
+            username:{
+                identifier:'username',
+                rules:[{
+                    type:'empty',
+                    prompt:'用户名不能为空'
+                }]
+            },
+            password:{
+                identifier:'password',
+                rules:[{
+                    type:'empty',
+                    prompt:'密码不能为空'
+                }]
+            },
+            nickname:{
+                identifier:'nickname',
+                rules:[{
+                    type:'empty',
+                    prompt:'昵称不能为空！'
+                }]
+            },
+            email:{
+                identifier:'email',
+                rules:[{
+                    type:'email',
+                    prompt:'请输入正确的邮箱地址'
+
+                }]
+            }
+        }
+    });
+
+    $.validator.addMethod('emailValidate', function( value, element ){
+
+        var pattern = /^\w{5,}@[a-z0-9]{2,3}\.[a-z]+$|\,$/;
+        return(pattern.test(value));
+
+    }, '请正确填写您的邮箱地址');
+
+</script>
+</body>
+</html>
